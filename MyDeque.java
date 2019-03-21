@@ -22,7 +22,8 @@ public class MyDeque<E> {
     display = display + data[length - 1] + "]";
     return display;
   }
-  public void addFirst(E element){ }
+  public void addFirst(E element) {
+    a
   public void addLast(E element){ }
   public E removeFirst(){ }
   public E removeLast(){ }
