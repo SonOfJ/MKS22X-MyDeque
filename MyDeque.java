@@ -26,6 +26,9 @@ public class MyDeque<E> {
     if (element == null) {
       throw new NullPointerException("Null elements are not allowed.");
     }
+    if (start == 0) { //If the very first index is already occupied.
+      start =
+    }
   public void addLast(E element){ }
   public E removeFirst(){ }
   public E removeLast(){ }
