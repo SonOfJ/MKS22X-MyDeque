@@ -14,6 +14,14 @@ public class MyDeque<E> {
   public int size() {
     return data.length;
   }
+  private void resize() {
+    int[] bigger = new int[data.length + 1]; //Let's just assume resize increases the maximum size by 1.
+    for (int i = 0; i < data.length; i = i + 1) { //Copy over elements.
+      bigger[i] = data[i];
+    }
+    data = bigger;
+    size = size + 1; //Increase overall size.
+  }
   public String toString() {
     String display = "[";
     for (int i = 0; i < data.length - 1; i = i + 1) {
