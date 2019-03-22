@@ -23,7 +23,9 @@ public class MyDeque<E> {
     return display;
   }
   public void addFirst(E element) {
-    a
+    if (element == null) {
+      throw new NullPointerException("Null elements are not allowed.");
+    }
   public void addLast(E element){ }
   public E removeFirst(){ }
   public E removeLast(){ }
