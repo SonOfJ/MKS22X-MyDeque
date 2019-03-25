@@ -36,7 +36,9 @@ public class MyDeque<E> {
     if (element == null) {
       throw new NullPointerException("Null elements are not allowed.");
     }
-    resize(); //Make space for that extra element.
+    if (size() == data.length) {
+      resize(); //Make space for that extra element.
+    }
     if (start == 0) { //If the very first index is already occupied.
       start = data - length; //Move the start index to the very end
     }
