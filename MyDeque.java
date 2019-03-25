@@ -93,6 +93,11 @@ public class MyDeque<E> {
     size = size - 1;
     return hold;
   }
-  public E getFirst(){ }
+  public E getFirst() {
+    if (size() == 0) {
+      throw new NoSuchElementException("There can't be a first element if the array is empty.");
+    }
+    return data[start];
+  }
   public E getLast(){ }
 }
