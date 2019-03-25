@@ -26,12 +26,13 @@ public class MyDeque<E> {
     String display = "[";
     for (int i = 0; i < data.length - 1; i = i + 1) {
       if (data[i] != null) {
-        display = display + data[i] + ", ";
+        display = display + data[i];
+        if (data[i + 1] != null) {
+          display = display + ", ";
+        }
       }
     }
-    if (data[data.length - 1] != null) {
-      display = display + data[data.length - 1] + "]";
-    }
+    display = display + "]";
     return display;
   }
   public void addFirst(E element) {
@@ -54,6 +55,9 @@ public class MyDeque<E> {
   public void addLast(E element) {
     if (element == null) {
       throw new NullPointerException("Null elements are not allowed.");
+    }
+    if (size() == data.length) {
+      resize(); //Make space for that extra element.
     }
     if (size() != 0) { //There's actually stuff in the array.
       if (end == data.length - 1) { //If the very last index is already occupied.
