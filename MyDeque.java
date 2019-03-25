@@ -1,3 +1,4 @@
+import java.util.*;
 public class MyDeque<E> {
   private E[] data;
   private int size, start, end;
@@ -15,7 +16,7 @@ public class MyDeque<E> {
     return data.length;
   }
   private void resize() {
-    int[] bigger = new int[data.length * 2 + 1]; //Let's just assume resize increases the maximum size by 1.
+    E[] bigger = new E[data.length * 2 + 1]; //Let's just assume resize increases the maximum size by 1.
     for (int i = 0; i < data.length; i = i + 1) { //Copy over elements.
       bigger[i] = data[i];
     }
@@ -29,7 +30,7 @@ public class MyDeque<E> {
         display = display + data[i] + ", ";
       }
     }
-    display = display + data[length - 1] + "]";
+    display = display + data[data.length - 1] + "]";
     return display;
   }
   public void addFirst(E element) {
