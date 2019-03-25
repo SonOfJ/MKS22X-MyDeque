@@ -31,8 +31,8 @@ public class MyDeque<E> {
     }
     if (data[data.length - 1] != null) {
       display = display + data[data.length - 1] + "]";
-      return display;
     }
+    return display;
   }
   public void addFirst(E element) {
     if (element == null) {
