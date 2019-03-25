@@ -49,7 +49,20 @@ public class MyDeque<E> {
     data[start] = element; //No matter the scenario, the element must be added.
     size = size + 1; //And the size increased.
   }
-  public void addLast(E element){ }
+  public void addLast(E element) {
+    if (element == null) {
+      throw new NullPointerException("Null elements are not allowed.");
+    }
+    if (size() != 0) { //There's actually stuff in the array.
+      if (end == data.length - 1) { //If the very last index is already occupied.
+        end = 0; //Move end to the start.
+      } else {
+        end = end + 1; //Move end to the right.
+      }
+    }
+    data[end] = element; //Add the element.
+    size = size + 1;
+  }
   public E removeFirst(){ }
   public E removeLast(){ }
   public E getFirst(){ }
