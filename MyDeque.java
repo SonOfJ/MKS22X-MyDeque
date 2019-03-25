@@ -99,5 +99,10 @@ public class MyDeque<E> {
     }
     return data[start];
   }
-  public E getLast(){ }
+  public E getLast() {
+    if (size() == 0) {
+      throw new NoSuchElementException("There can't be a first element if the array is empty.");
+    }
+    return data[end];
+  }
 }
