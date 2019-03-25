@@ -63,7 +63,21 @@ public class MyDeque<E> {
     data[end] = element; //Add the element.
     size = size + 1;
   }
-  public E removeFirst(){ }
+  public E removeFirst() {
+    if (size() == 0) {
+      throw new NoSuchElementException("The array is empty.");
+    }
+    E hold = data[start]; //The value should be held onto because it must be returned later.
+    if (size() != 1) { //More than 1 element?
+      if (start == data.length - 1) { //If start is at the very end.
+        start = 0; //Move it to the start.
+      } else {
+        start = start + 1; //Move start to the right.
+      }
+    }
+    size = size - 1; //Size decreases due to subtraction.
+    return hold; //Return old value.
+  }
   public E removeLast(){ }
   public E getFirst(){ }
   public E getLast(){ }
