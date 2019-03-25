@@ -39,9 +39,16 @@ public class MyDeque<E> {
     if (size() == data.length) {
       resize(); //Make space for that extra element.
     }
-    if (start == 0) { //If the very first index is already occupied.
-      start = data - length; //Move the start index to the very end
+    if (size() != 0) { //There's actually stuff in the array.
+      if (start == 0) { //If the very first index is already occupied.
+        start = data.length - 1; //Move the start index to the very end.
+      } else { //Otherwise...
+        start = start - 1; //Simply just move start to the left.
+      }
     }
+    data[start] = element; //No matter the scenario, the element must be added.
+    size = size + 1; //And the size increased.
+  }
   public void addLast(E element){ }
   public E removeFirst(){ }
   public E removeLast(){ }
