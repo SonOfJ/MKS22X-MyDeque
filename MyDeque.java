@@ -25,7 +25,9 @@ public class MyDeque<E> {
   public String toString() {
     String display = "[";
     for (int i = 0; i < data.length - 1; i = i + 1) {
-      display = display + data[i] + ", ";
+      if (data[i] != null) {
+        display = display + data[i] + ", ";
+      }
     }
     display = display + data[length - 1] + "]";
     return display;
