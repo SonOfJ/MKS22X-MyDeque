@@ -29,8 +29,10 @@ public class MyDeque<E> {
         display = display + data[i] + ", ";
       }
     }
-    display = display + data[data.length - 1] + "]";
-    return display;
+    if (data[data.length - 1] != null) {
+      display = display + data[data.length - 1] + "]";
+      return display;
+    }
   }
   public void addFirst(E element) {
     if (element == null) {
