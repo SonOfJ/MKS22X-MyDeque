@@ -1,6 +1,7 @@
-public class Calculator{
-    /*Evaluate a postfix expression stored in s.
-     *Assume valid postfix notation, separated by spaces.
-     */
-    public static double eval(String s){}
+public class Calculator {
+  public static double eval(String s) {
+    MyDeque<String> que = new MyDeque<String>(s.length());
+    String[] expression = s.split(" "); //Split the string at the spaces.
+
+
 }
