@@ -8,5 +8,8 @@ public class Calculator {
       } catch (NumberFormatException e) { //If it's not...
       //Leave it.
       }
+      if (expression[i].equals("+") && queue.size() > 1) { //Addition.
+        queue.addLast(stack.removeLast() + stack.removeLast()); //Add the last two numbers.
+      }
     }
 }
