@@ -8,11 +8,12 @@ public class Calculator {
       } catch (NumberFormatException e) { //If it's not...
       //Leave it.
       }
-      if (expression[i].equals("+") && queue.size() > 1) { //Addition.
+      if (expression[i].equals("+")) { //Addition.
         queue.addLast(stack.removeLast() + stack.removeLast()); //Add the last two numbers.
       }
-      if (expression[i].equals("-") && queue.size() > 1) { //Subtraction.
+      if (expression[i].equals("-")) { //Subtraction.
         queue.addLast(-1 * stack.removeLast() + stack.removeLast()); //Being careful about which one is supposed to be subtracted.
       }
+      if (expression[i].equals("*")) > 
     }
 }
