@@ -9,11 +9,13 @@ public class Calculator {
       //Leave it.
       }
       if (expression[i].equals("+")) { //Addition.
-        queue.addLast(stack.removeLast() + stack.removeLast()); //Add the last two numbers.
+        queue.addLast(queue.removeLast() + queue.removeLast()); //Add the last two numbers.
       }
       if (expression[i].equals("-")) { //Subtraction.
-        queue.addLast(-1 * stack.removeLast() + stack.removeLast()); //Being careful about which one is supposed to be subtracted.
+        queue.addLast(-1 * queue.removeLast() + queue.removeLast()); //Being careful about which one is supposed to be subtracted.
       }
-      if (expression[i].equals("*")) > 
+      if (expression[i].equals("*")) { //Multiplication.
+        queue.addLast(queue.remov        
+      }
     }
 }
