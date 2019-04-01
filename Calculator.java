@@ -15,7 +15,7 @@ public class Calculator {
         queue.addLast(-1 * queue.removeLast() + queue.removeLast()); //Being careful about which one is supposed to be subtracted.
       }
       if (expression[i].equals("*")) { //Multiplication.
-        queue.addLast(queue.remov        
+        queue.addLast(queue.removeLast() * queue.removeLast()); //Multiply the last two.
       }
     }
 }
