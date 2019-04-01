@@ -11,5 +11,8 @@ public class Calculator {
       if (expression[i].equals("+") && queue.size() > 1) { //Addition.
         queue.addLast(stack.removeLast() + stack.removeLast()); //Add the last two numbers.
       }
+      if (expression[i].equals("-") && queue.size() > 1) { //Subtraction.
+        queue.addLast(-1 * stack.removeLast() + stack.removeLast()); //Being careful about which one is supposed to be subtracted.
+      }
     }
 }
