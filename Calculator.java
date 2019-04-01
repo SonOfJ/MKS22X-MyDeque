@@ -20,5 +20,10 @@ public class Calculator {
       if (expression[i].equals("/")) { //Division.
         queue.addLast(1 / queue.removeLast() * queue.removeLast()); //Being careful about which one is the divisor.
       }
+      if (expression[i].equals("%")) { //Mod.
+        Double last = queue.removeLast();
+        Double secondLast = queue.removeLast();
+        queue.addLast(secondLast % last); //Being careful of which number is being modded.
+      }
     }
 }
