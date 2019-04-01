@@ -26,4 +26,6 @@ public class Calculator {
         queue.addLast(secondLast % last); //Being careful of which number is being modded.
       }
     }
+    return queue.getLast();
+  }
 }
