@@ -17,5 +17,8 @@ public class Calculator {
       if (expression[i].equals("*")) { //Multiplication.
         queue.addLast(queue.removeLast() * queue.removeLast()); //Multiply the last two.
       }
+      if (expression[i].equals("/")) { //Division.
+        queue.addLast(1 / queue.removeLast() * queue.removeLast()); //Being careful about which one is the divisor.
+      }
     }
 }
